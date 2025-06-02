@@ -24,6 +24,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
+        with:
+          clean: true
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
@@ -42,4 +44,6 @@ jobs:
           tar xzf Serializer-8.29.0.tar.gz
           cd Serializer-8.29.0
           pwd
+          ls -la
+          cd ${{ github.workspace }}
           ls -la
