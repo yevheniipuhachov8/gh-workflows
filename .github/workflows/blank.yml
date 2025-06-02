@@ -45,5 +45,9 @@ jobs:
           cd Serializer-8.29.0
           pwd
           ls -la
+      
+      - name: Cleanup workspace 
+        run: |
           cd ${{ github.workspace }}
           ls -la
+          
