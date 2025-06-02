@@ -39,7 +39,7 @@ jobs:
           RELEASE="8.29.0"
           DB_TAG=$(c4 info @exasol-$RELEASE Dependencies | jq -r ".DB")
           c4 info $DB_TAG Local-Linkdir
-          DB_RELEASE_DIR=$(echo "$DB_TAG" | sed 's/-/\//'
+          DB_RELEASE_DIR=$(echo "$DB_TAG" | sed 's/-/\//')
           ls /x/u/$DB_RELEASE_DIR
           cp /x/u/$DB_RELEASE_DIR/Serializer-$RELEASE.tar.gz .
           tar xzf Serializer-$RELEASE.tar.gz
