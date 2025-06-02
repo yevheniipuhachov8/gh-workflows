@@ -38,3 +38,8 @@ jobs:
           c4 info @exasol-8.29.0 Dependencies | jq -r ".DB" 
           c4 info branchr-db+sn.release-8.29.0-eca24bb1-64r Local-Linkdir
           ls /x/u/branchr/db+sn.release-8.29.0-eca24bb1-64r
+          cp /x/u/branchr/db+sn.release-8.29.0-eca24bb1-64r/Serializer-8.29.0.tar.gz .
+          tar xzf Serializer-8.29.0.tar.gz
+          cd Serializer-8.29.0
+          pwd
+          ls -la
