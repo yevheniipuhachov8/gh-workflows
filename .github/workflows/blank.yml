@@ -36,7 +36,7 @@ jobs:
         run: |
           echo Add other actions to build,
           echo test, and deploy your project.
-          RELEASE="8.29.0"
+          RELEASE="8.29.10"
           DB_TAG=$(c4 info @exasol-$RELEASE Dependencies | jq -r ".DB")
           c4 info $DB_TAG Local-Linkdir
           DB_RELEASE_DIR=$(echo "$DB_TAG" | sed 's/-/\//')
