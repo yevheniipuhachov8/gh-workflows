@@ -30,27 +30,3 @@ jobs:
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
-
-      # Runs a set of commands using the runners shell
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
-          RELEASE="8.29.10"
-          DB_TAG=$(c4 info @exasol-$RELEASE Dependencies | jq -r ".DB")
-          c4 info $DB_TAG Local-Linkdir
-          DB_RELEASE_DIR=$(echo "$DB_TAG" | sed 's/-/\//')
-          ls /x/u/$DB_RELEASE_DIR
-          cp /x/u/$DB_RELEASE_DIR/Serializer-$RELEASE.tar.gz .
-          tar xzf Serializer-$RELEASE.tar.gz
-          cd Serializer-$RELEASE
-          pwd
-          ls -la
-      
-      # - name: Cleanup workspace 
-      #   run: |
-      #     cd ${{ github.workspace }}
-      #     ls -la
-      #     rm -rf *
-      #   if: always()
-          
